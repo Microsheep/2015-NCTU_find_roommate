@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="交大新生找室友">
-    <meta name="author" content="交大學聯會 資訊部 Microsheep">
+    <meta name="author" content="交大學聯會 資訊部">
     <meta name="keywords" content="">
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" href="./asset/public/logo.PNG">
@@ -23,7 +23,6 @@
 </head>
 <?php
     include_once("./asset/commonlib.php");
-    include_once("./asset/config.php");
 ?>
 <body>
 <?php
@@ -46,16 +45,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="./ten_dorm.php">十舍</a>
+                        <a href="./dorm.php?place=ten&page=1">十舍</a>
                     </li>
                     <li>
-                        <a href="./twelve_dorm.php">十二舍</a>
+                        <a href="./dorm.php?place=twelve&page=1">十二舍</a>
                     </li>
                     <li>
-                        <a href="./girl_dorm.php">竹軒</a>
+                        <a href="./dorm.php?place=girl&page=1">竹軒</a>
                     </li>
                     <li>
-                        <a href="./give_data.php">填資料</a>
+                        <a href="./give_data.php?status=normal">填資料</a>
                     </li>
                     <li>
                         <a href="./contact.php">聯絡我們</a>
