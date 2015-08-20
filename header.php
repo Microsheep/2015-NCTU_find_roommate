@@ -27,7 +27,7 @@
 ?>
 <body>
 <?php
-    //For analytics
+    include_once("./asset/analyticstracking.php");
 ?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
