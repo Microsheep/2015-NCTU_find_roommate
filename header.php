@@ -48,6 +48,9 @@
                     <li>                        
                         <a href="./search.php">搜尋</a>
                     <li>
+                    <li>
+                        <a href="./give_data.php?status=normal">填資料</a>
+                    </li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">十舍 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -87,9 +90,6 @@
                             <li><a href="./dorm.php?place=girlB&floor=2">二樓</a></li>
                             <li><a href="./dorm.php?place=girlB&floor=3">三樓</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="./give_data.php?status=normal">填資料</a>
                     </li>
                     <li>
                         <a href="./contact.php">聯絡我們</a>

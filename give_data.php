@@ -48,7 +48,7 @@ elseif($_GET['status']=="SameID"){
         </div>
         <label for="_email">您的E-mail (非必填)</label>
         <input type="email" class="form-control" name="post_email" id="_email" placeholder="EX: stu.nctu@gmail.com"><br>
-        <label for="_fb">您的FB (非必填) 請放個人塗鴉牆的網址，並且前面不要加入 http:// 或 https:// </label>
+        <label for="_fb">您的FB塗鴉牆 (非必填) 請放個人塗鴉牆的網址</label>
         <input type="text" class="form-control" name="post_fb" id="_fb" placeholder="EX: www.facebook.com/NctuStUnion">
     </div>
     <h5><b>想說的話 (非必填)</b></h5>
