@@ -23,6 +23,7 @@
 </head>
 <?php
     include_once("./asset/commonlib.php");
+    include_once("./asset/data.php");
 ?>
 <body>
 <?php
@@ -44,14 +45,44 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="./dorm.php?place=ten&page=1">十舍</a>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">十舍 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./dorm.php?place=ten&floor=2">二樓</a></li>
+                            <li><a href="./dorm.php?place=ten&floor=3">三樓</a></li>
+                            <li><a href="./dorm.php?place=ten&floor=4">四樓</a></li>
+                            <li><a href="./dorm.php?place=ten&floor=5">五樓</a></li>
+                        </ul>
+                    </li> 
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">十二舍 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./dorm.php?place=twelve&floor=1">一樓</a></li>
+                            <li><a href="./dorm.php?place=twelve&floor=2">二樓</a></li>
+                            <li><a href="./dorm.php?place=twelve&floor=3">三樓</a></li>
+                            <li><a href="./dorm.php?place=twelve&floor=4">四樓</a></li>
+                            <li><a href="./dorm.php?place=twelve&floor=5">五樓</a></li>
+                            <li><a href="./dorm.php?place=twelve&floor=6">六樓</a></li>
+                            <li><a href="./dorm.php?place=twelve&floor=7">七樓</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="./dorm.php?place=twelve&page=1">十二舍</a>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">竹軒 A <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./dorm.php?place=girlA&floor=0">地下一樓</a></li>
+                            <li><a href="./dorm.php?place=girlA&floor=1">一樓</a></li>
+                            <li><a href="./dorm.php?place=girlA&floor=2">二樓</a></li>
+                            <li><a href="./dorm.php?place=girlA&floor=3">三樓</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="./dorm.php?place=girl&page=1">竹軒</a>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">竹軒 B <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./dorm.php?place=girlB&floor=0">地下一樓</a></li>
+                            <li><a href="./dorm.php?place=girlB&floor=1">一樓</a></li>
+                            <li><a href="./dorm.php?place=girlB&floor=2">二樓</a></li>
+                            <li><a href="./dorm.php?place=girlB&floor=3">三樓</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="./give_data.php?status=normal">填資料</a>

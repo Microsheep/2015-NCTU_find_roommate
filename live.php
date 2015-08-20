@@ -12,7 +12,7 @@
     else{
         $place = "十舍";
     }
-    $floor = (int)$_GET['floor'];
+    $roomid = (int)$_GET['roomid'];
 ?>
 
 <div class="row">
@@ -25,6 +25,7 @@
 </div>
 <div class="row">
 <?php
+    /*
     for ( $i=$floorplan[$place][$floor][0];$i<=$floorplan[$place][$floor][1];$i++ ){
         echo "<div class=\"col-md-4 portfolio-item\">";
         echo "<h3>";
@@ -34,6 +35,7 @@
         echo "<p></p>";
         echo "</div>";
     }
+    */
 ?>    
 </div>
 
