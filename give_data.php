@@ -31,6 +31,33 @@ elseif($_GET['status']=="SameID"){
         <div class="alert alert-danger" role="alert" id="A_name" style="display:none">
             姓名不可以為空！
         </div>
+        <label for="_class">您的科系 (必填)</label><br>
+        <select class="form-control" name="post_class" id="_class">
+            <option>請選擇自己的科系</option>
+            <option>電機資訊學士班</option>
+            <option>奈米科學及工程學士學位學程</option>
+            <option>電子工程學系</option>
+            <option>電機工程學系</option>
+            <option>光電工程學系</option>
+            <option>資訊工程學系</option>
+            <option>材料科學與工程學系</option>
+            <option>機械工程學系</option>
+            <option>土木工程學系</option>
+            <option>電子物理學系</option>
+            <option>應用化學系</option>
+            <option>應用數學系</option>
+            <option>生物科技學系</option>
+            <option>資訊管理與財務金融學系</option>
+            <option>管理科學系</option>
+            <option>運輸與物流管理學系</option>
+            <option>工業工程與管理學系</option>
+            <option>外國語文學系</option>
+            <option>傳播與科技學系</option>
+            <option>人文社會學系</option>
+        </select><br>
+        <div class="alert alert-danger" role="alert" id="A_class" style="display:none">
+            請選擇科系！
+        </div>
         <label for="_dorm">您的宿舍 (必填)</label><br>
         <select class="form-control" name="post_dorm" id="_dorm">
             <option>請選擇自己的宿舍</option>
@@ -78,6 +105,13 @@ elseif($_GET['status']=="SameID"){
             document.getElementById("A_name").style.display="";
             flag=0;
         }
+        if(document.getElementById("_class").value != "請選擇自己的科系"){
+            document.getElementById("A_class").style.display="none"; 
+        }
+        else{
+            document.getElementById("A_class").style.display="";
+            flag=0;
+        }
         if(document.getElementById("_dorm").value != "請選擇自己的宿舍"){
             document.getElementById("A_dorm").style.display="none"; 
         }
@@ -109,7 +143,7 @@ elseif($_GET['status']=="SameID"){
         }
     }
 </script>
-
+<script src=./asset/no_enter.js></script>
 <?php
 include_once("./footer.php");
 ?>

@@ -30,7 +30,7 @@
     }
     $conn = getConnection("micro_dorm");
     $ary = getlive($conn,$now_place,$get_roomid);
-    $display = count($ary)/5;
+    $display = count($ary)/6;
     killConnection($conn);
 ?>
 
@@ -53,22 +53,24 @@
     echo "<div class=\"row\">";
     for ( $i=0;$i<min($display,2);$i++ ){
         echo "<div class=\"col-md-6 portfolio-item\">";
-        echo "<h2>" . $ary[$i*5] . "<span style=\"font-size:24px;\"> " . $ary[$i*5+1] . "</span></h2>";
-        echo "<h4>FB : <a href=\"https://" . $ary[$i*5+3] . "\">" . $ary[$i*5+3] . "</a></h4>";
-        echo "<h4>E-mail : <a href=\"mailto:" . $ary[$i*5+2] . "\"> " . $ary[$i*5+2] . "</a></h4>";
+        echo "<h2>" . $ary[$i*6] . "<span style=\"font-size:24px;\"> " . $ary[$i*6+1] . "</span></h2>";
+        echo "<h4>科系 : " . $ary[$i*6+5] . "</a></h4>";
+        echo "<h4>FB : <a href=\"https://" . $ary[$i*6+3] . "\">" . $ary[$i*6+3] . "</a></h4>";
+        echo "<h4>E-mail : <a href=\"mailto:" . $ary[$i*6+2] . "\"> " . $ary[$i*6+2] . "</a></h4>";
         echo "<div class=\"alert alert-warning\" role=\"alert\">";
-        echo $ary[$i*5+4] . "</div>";
+        echo $ary[$i*6+4] . "</div>";
         echo "</div>";
     }
     echo "</div>";
     echo "<div class=\"row\">";
     for ( $i=2;$i<min($display,4);$i++ ){
         echo "<div class=\"col-md-6 portfolio-item\">";
-        echo "<h2>" . $ary[$i*5] . "<span style=\"font-size:24px;\"> " . $ary[$i*5+1] . "</span></h2>";
-        echo "<h4>FB : <a href=\"https://" . $ary[$i*5+3] . "\">" . $ary[$i*5+3] . "</a></h4>";
-        echo "<h4>E-mail : <a href=\"mailto:" . $ary[$i*5+2] . "\"> " . $ary[$i*5+2] . "</a></h4>";
+        echo "<h2>" . $ary[$i*6] . "<span style=\"font-size:24px;\"> " . $ary[$i*6+1] . "</span></h2>";
+        echo "<h4>科系 : " . $ary[$i*6+5] . "</a></h4>";
+        echo "<h4>FB : <a href=\"https://" . $ary[$i*6+3] . "\">" . $ary[$i*6+3] . "</a></h4>";
+        echo "<h4>E-mail : <a href=\"mailto:" . $ary[$i*6+2] . "\"> " . $ary[$i*6+2] . "</a></h4>";
         echo "<div class=\"alert alert-warning\" role=\"alert\">";
-        echo $ary[$i*5+4] . "</div>";
+        echo $ary[$i*6+4] . "</div>";
         echo "</div>";
     }
     echo "</div>";

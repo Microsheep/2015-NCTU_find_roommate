@@ -3,8 +3,15 @@ include_once("./asset/commonlib.php");
 // Set variable
 $post_ID = $_POST['post_ID'];
 $post_name = $_POST['post_name'];
+$post_class = $_POST['post_class'];
 $post_dorm = $_POST['post_dorm'];
 $post_roomid = $_POST['post_roomid'];
+if(strpos($post_roomid,"a")!==false){
+    $post_roomid = "A" . substr($post_roomid, 1);
+}
+if(strpos($post_roomid,"b")!==false){
+    $post_roomid = "B" . substr($post_roomid, 1);
+}
 $post_floor = substr($post_roomid, 0, -2);
 if(strpos($post_floor,"A")!==false || strpos($post_floor,"B")!==false){
     $post_floor = substr($post_floor, 1);
@@ -26,7 +33,7 @@ $ary = mysql_fetch_array($result);
 //Insert item
 if($ary[0]==0){
     mysql_free_result($result);
-    $sql = "INSERT INTO dorm_data(ID,name,dorm,roomid,floor,email,fb,words) VALUES (\"$post_ID\",\"$post_name\",\"$post_dorm\",\"$post_roomid\",\"$post_floor\",\"$post_email\",\"$post_fb\",\"$post_words\")";
+    $sql = "INSERT INTO dorm_data(ID,name,class,dorm,roomid,floor,email,fb,words) VALUES (\"$post_ID\",\"$post_name\",\"$post_class\",\"$post_dorm\",\"$post_roomid\",\"$post_floor\",\"$post_email\",\"$post_fb\",\"$post_words\")";
     mysql_query($sql, $conn) or die('MySQL query error '.mysql_error().' '.$sql);
     killConnection($conn);
     header("Location: ./give_data.php?status=OK&id=".$post_ID); 
