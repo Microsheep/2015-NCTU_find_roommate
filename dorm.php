@@ -19,18 +19,29 @@
     <div class="col-lg-12">
         <h1 class="page-header">
             交大新生找室友 
-            <small>找找你跟誰住吧 ~</small>
+            <small>
+                <?php
+                    if($floor==0){
+                        $now_floor = "地下一";
+                    }
+                    else{
+                        $now_floor = $floor;
+                    }
+                    echo $place . $now_floor . "樓"
+                ?>
+            </small>
         </h1>
     </div>
 </div>
 <div class="row">
 <?php
     for ( $i=$floorplan[$place][$floor][0];$i<=$floorplan[$place][$floor][1];$i++ ){
+        $now_i = str_pad($i, 3, "0", STR_PAD_LEFT);
         echo "<div class=\"col-md-4 portfolio-item\">";
         echo "<h3>";
-        echo "<a href=\"live.php?place=" . $_GET['place'] . "&roomid=" . $i . "\">" . $i . "</a>";
+        echo "<a href=\"live.php?place=" . $_GET['place'] . "&floor=" . $floor . "&roomid=" . $now_i . "\">" . $now_i . "</a>";
         echo "</h3>";
-        echo "<h4>" . $place . " " . $floor . "樓</h4>";
+        echo "<h4>" . $place . " " . $now_floor . "樓</h4>";
         echo "<p></p>";
         echo "</div>";
     }

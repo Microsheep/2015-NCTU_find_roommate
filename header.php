@@ -45,9 +45,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <li>                        
+                        <a href="./search.php">搜尋</a>
+                    <li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">十舍 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="./dorm.php?place=ten&floor=1">一樓</a></li>
                             <li><a href="./dorm.php?place=ten&floor=2">二樓</a></li>
                             <li><a href="./dorm.php?place=ten&floor=3">三樓</a></li>
                             <li><a href="./dorm.php?place=ten&floor=4">四樓</a></li>
