@@ -28,18 +28,18 @@ $post_words = $_POST['post_words'];
 $conn = getConnection("micro_dorm");
 // Check if ID exist
 $sql = "SELECT count(id) FROM `dorm_data` WHERE id=". $_POST['post_ID'];
-$result = mysql_query($sql, $conn) or die('MySL query error '.mysql_error().' '.$sql);
-$ary = mysql_fetch_array($result);
+$result = mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
+$ary = mysqli_fetch_array($result);
 //Insert item
 if($ary[0]==0){
-    mysql_free_result($result);
+    mysqli_free_result($result);
     $sql = "INSERT INTO dorm_data(ID,name,class,dorm,roomid,floor,email,fb,words) VALUES (\"$post_ID\",\"$post_name\",\"$post_class\",\"$post_dorm\",\"$post_roomid\",\"$post_floor\",\"$post_email\",\"$post_fb\",\"$post_words\")";
-    mysql_query($sql, $conn) or die('MySQL query error '.mysql_error().' '.$sql);
+    mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
     killConnection($conn);
     header("Location: ./give_data.php?status=OK&id=".$post_ID); 
 }
 else{
-    mysql_free_result($result);
+    mysqli_free_result($result);
     killConnection($conn);
     header("Location: ./give_data.php?status=SameID&id=".$post_ID);
 }
