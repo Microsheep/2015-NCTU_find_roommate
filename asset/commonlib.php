@@ -2,20 +2,20 @@
 include_once("./asset/secret/config.php");
 function getConnection($dbname){
     global $dbhost,$dbuser,$dbpass;
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
-    mysql_query("SET NAMES 'utf8'");
-    mysql_select_db($dbname);
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+    mysqli_query($conn,"SET NAMES 'utf8'");
+    mysqli_select_db($conn,$dbname);
     return $conn;
 }
 function killConnection($conn){
-    mysql_close($conn);
+    mysqli_close($conn);
     return;
 }
 function getlive($conn,$place,$roomid){    
     $sql = "SELECT name,ID,email,fb,words,class FROM `dorm_data` WHERE dorm=\"" . $place . "\" and roomid=\"" . $roomid . "\" order by ID";
-    $result = mysql_query($sql, $conn) or die('MySL query error '.mysql_error().' '.$sql);
+    $result = mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
     $ary=array();
-    while($row = mysql_fetch_array($result)){
+    while($row = mysqli_fetch_array($result)){
         $ary[]=$row[0];
         $ary[]=$row[1];
         $ary[]=$row[2];
@@ -23,14 +23,14 @@ function getlive($conn,$place,$roomid){
         $ary[]=$row[4];
         $ary[]=$row[5];
     }
-    mysql_free_result($result);
+    mysqli_free_result($result);
     return $ary;
 }
 function getIDdata($conn,$ID){
     $sql = "SELECT name,ID,email,fb,words,dorm,roomid,class FROM `dorm_data` WHERE ID=" . $ID;
-    $result = mysql_query($sql, $conn) or die('MySL query error '.mysql_error().' '.$sql);
+    $result = mysqli_query($conn, $sql) or die('MySL query error '.mysqli_error().' '.$sql);
     $ary=array();
-    while($row = mysql_fetch_array($result)){
+    while($row = mysqli_fetch_array($result)){
         $ary[]=$row[0];
         $ary[]=$row[1];
         $ary[]=$row[2];
@@ -40,14 +40,14 @@ function getIDdata($conn,$ID){
         $ary[]=$row[6];
         $ary[]=$row[7];
     }
-    mysql_free_result($result);
+    mysqli_free_result($result);
     return $ary;
 }
 function getnamedata($conn,$name){
     $sql = "SELECT name,ID,email,fb,words,dorm,roomid,class FROM `dorm_data` WHERE name like \"%" . $name . "%\"";
-    $result = mysql_query($sql, $conn) or die('MySL query error '.mysql_error().' '.$sql);
+    $result = mysqli_query($conn, $sql) or die('MySL query error '.mysqli_error().' '.$sql);
     $ary=array();
-    while($row = mysql_fetch_array($result)){
+    while($row = mysqli_fetch_array($result)){
         $ary[]=$row[0];
         $ary[]=$row[1];
         $ary[]=$row[2];
@@ -57,7 +57,7 @@ function getnamedata($conn,$name){
         $ary[]=$row[6];
         $ary[]=$row[7];
     }
-    mysql_free_result($result);
+    mysqli_free_result($result);
     return $ary;
 }
 
