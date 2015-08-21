@@ -27,7 +27,7 @@ function getlive($conn,$place,$roomid){
     return $ary;
 }
 function getIDdata($conn,$ID){
-    $sql = "SELECT name,ID,email,fb,words,dorm,roomid,class FROM `dorm_data` WHERE ID=" . $ID;
+    $sql = "SELECT name,ID,email,fb,words,dorm,roomid,class FROM `dorm_data` WHERE ID like \"%" . $ID . "%\"";
     $result = mysqli_query($conn, $sql) or die('MySL query error '.mysqli_error().' '.$sql);
     $ary=array();
     while($row = mysqli_fetch_array($result)){
@@ -60,6 +60,8 @@ function getnamedata($conn,$name){
     mysqli_free_result($result);
     return $ary;
 }
+
+
 
 
 ?>

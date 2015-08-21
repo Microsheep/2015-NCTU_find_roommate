@@ -21,17 +21,17 @@ elseif($_GET['status']=="SameID"){
 ?>
 <form name="dorm" action="send_post.php" method="post">
     <div class="form-group">
-        <label for="_ID">您的學號 (必填)</label>
+        <label for="_ID"><font color="red">您的學號 (必填)</font></label>
         <input type="text" class="form-control" name="post_ID" id="_ID" placeholder="EX: 0123456"><br>
         <div class="alert alert-danger" role="alert" id="A_ID" style="display:none">
             學號錯誤！
         </div>
-        <label for="_name">您的大名 (必填)</label>
+        <label for="_name"><font color="red">您的大名 (必填)</font></label>
         <input type="text" class="form-control" name="post_name" id="_name" placeholder="EX: 王大明"><br>
         <div class="alert alert-danger" role="alert" id="A_name" style="display:none">
             姓名不可以為空！
         </div>
-        <label for="_class">您的科系 (必填)</label><br>
+        <label for="_class"><font color="red">您的科系 (必填)</font></label><br>
         <select class="form-control" name="post_class" id="_class">
             <option>請選擇自己的科系</option>
             <option>電機資訊學士班</option>
@@ -58,7 +58,7 @@ elseif($_GET['status']=="SameID"){
         <div class="alert alert-danger" role="alert" id="A_class" style="display:none">
             請選擇科系！
         </div>
-        <label for="_dorm">您的宿舍 (必填)</label><br>
+        <label for="_dorm"><font color="red">您的宿舍 (必填)</font></label><br>
         <select class="form-control" name="post_dorm" id="_dorm">
             <option>請選擇自己的宿舍</option>
             <option>十舍</option>
@@ -68,7 +68,7 @@ elseif($_GET['status']=="SameID"){
         <div class="alert alert-danger" role="alert" id="A_dorm" style="display:none">
             請選擇宿舍！
         </div>
-        <label for="_roomid">您的房號 - 十舍、十二舍為XXX、竹軒為AXXX或BXXX (必填)</label> 
+        <label for="_roomid"><font color="red">您的房號 - 十舍、十二舍為XXX、竹軒為AXXX或BXXX (必填)</font></label> 
         <input type="text" class="form-control" name="post_roomid" id="_roomid" placeholder="EX: 119 A101 B102"><br>
         <div class="alert alert-danger" role="alert" id="A_roomid" style="display:none">
             房號錯誤！
@@ -79,6 +79,7 @@ elseif($_GET['status']=="SameID"){
         <input type="text" class="form-control" name="post_fb" id="_fb" placeholder="EX: www.facebook.com/NctuStUnion">
     </div>
     <h5><b>想說的話 (非必填)</b></h5>
+    <h6><b>(從哪裡來、之前讀哪、興趣、喜歡什麼運動...)</b></h6>
     <textarea class="form-control" rows="5" name="post_words"></textarea><br>
     <div class="row">
         <div class="col-md-12" style="text-align:center">

@@ -36,10 +36,10 @@ include_once("./header.php");
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="_ID">以學號查詢</label>
+                        <label for="_ID">以學號查詢 (模糊搜尋)</label>
                         <input type="text" class="form-control" name="post_ID" id="_ID" placeholder="EX: 0123456"><br>
                         <div class="alert alert-danger" role="alert" id="A_ID" style="display:none">
-                            學號錯誤！
+                            學號不可以為空！
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ include_once("./header.php");
 
 <script type="text/javascript">
 function check_ID(){
-    if(document.getElementById("_ID").value.length==7) {
+    if(document.getElementById("_ID").value!="") {
         search_ID.submit();
     }
     else{

@@ -14,7 +14,7 @@ killConnection($conn);
         </h1>
     </div>
 </div>
-<div class="alert alert-success" role="alert">搜尋 " <?php echo $_POST['post_name'];?> " 的結果</div>
+<div class="alert alert-success" role="alert">搜尋 " <?php echo $_POST['post_name'];?> " 的結果，共有 <?php echo count($name_ary)/8;?> 筆</div>
 <div class="panel panel-info">
     <div class="panel-heading">
         <h4>我的室友在哪裡？</h4>

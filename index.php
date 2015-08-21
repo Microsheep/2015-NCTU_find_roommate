@@ -1,5 +1,10 @@
 <?php
     include_once("./header.php");
+    $conn = getConnection("micro_dorm");
+    // Check if ID exist
+    $sql = "SELECT count(id) FROM `dorm_data`";
+    $result = mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
+    $ary = mysqli_fetch_array($result);
 ?>
 
 <div class="row">
@@ -21,6 +26,9 @@
         <h4>4. 大功告成！ 若有任何問題，歡迎使用右上角的聯絡我們與我們聯繫！</h4>
         <h4>5. 覺得學聯會很棒嗎？ <a href="https://www.facebook.com/NctuStUnion">幫忙學聯會按個讚吧！</a>也歡迎大家加入學聯會唷~</h4>
     </div>
+</div>
+<div class="alert alert-info" role="alert">
+    目前已有 <?php echo $ary[0];?> 人填寫資料
 </div>
 
 <?php
