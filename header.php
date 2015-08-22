@@ -77,7 +77,6 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">竹軒 A <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./dorm.php?place=girlA&floor=0">地下一樓</a></li>
                             <li><a href="./dorm.php?place=girlA&floor=1">一樓</a></li>
                             <li><a href="./dorm.php?place=girlA&floor=2">二樓</a></li>
                             <li><a href="./dorm.php?place=girlA&floor=3">三樓</a></li>
