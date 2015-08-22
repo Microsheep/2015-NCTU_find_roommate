@@ -1,7 +1,6 @@
 <?php
 include_once("./asset/analyticstracking.php");
 include_once("./asset/secret/config.php");
-session_start();
 if(! empty($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 'true') {
     header('Location: ./index.php');
 }
@@ -11,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST["password"];
         global $ans;
         if($password == $ans) {
+            session_start();
             $_SESSION["authenticated"] = 'true';
             header('Location: ./index.php');
         }
