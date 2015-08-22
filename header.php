@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="交大新生找室友">
     <meta name="author" content="交大學聯會 資訊部">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="交大新生找室友,NCTU新生找室友,交大新生,NCTU新生,找室友,交大學聯會,交大,NCTU">
     <meta name="robots" content="index,follow">
     <link rel="shortcut icon" href="./asset/public/logo.PNG">
     <title>交大新生找室友</title>
@@ -22,6 +22,7 @@
     <![endif]-->
 </head>
 <?php
+    require_once("./asset/authenticate.php");
     include_once("./asset/commonlib.php");
     include_once("./asset/data.php");
 ?>
