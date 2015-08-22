@@ -10,7 +10,7 @@ if($_GET['status']=="normal"){
 }
 elseif($_GET['status']=="OK"){
     echo "<div class=\"alert alert-success\" role=\"alert\">";
-    echo "以新增資料 學號：" . $_GET['id'] . "！";
+    echo "已新增資料 學號：" . $_GET['id'] . "！";
     echo "</div>";
 }
 elseif($_GET['status']=="SameID"){
