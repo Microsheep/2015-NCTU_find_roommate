@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST["password"];
         global $ans;
         if($password == $ans) {
-            session_start();
             $_SESSION["authenticated"] = 'true';
             header('Location: ./index.php');
         }
