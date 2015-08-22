@@ -1,5 +1,6 @@
 <?php
 include_once("./asset/analyticstracking.php");
+include_once("./asset/secret/config.php");
 session_start();
 if(! empty($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 'true') {
     header('Location: ./index.php');
