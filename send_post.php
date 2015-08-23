@@ -4,6 +4,9 @@ require_once("./asset/authenticate.php");
 include_once("./asset/commonlib.php");
 // Set variable
 $post_ID = $_POST['post_ID'];
+if(empty($post_ID)){
+    header('Location: ./give_data.php?status=normal');
+}
 $post_name = $_POST['post_name'];
 $post_class = $_POST['post_class'];
 $post_dorm = $_POST['post_dorm'];
