@@ -1,5 +1,6 @@
 <?php
 echo "Sending data... will auto redirect!";
+require_once("./asset/authenticate.php");
 include_once("./asset/commonlib.php");
 // Set variable
 $post_ID = $_POST['post_ID'];
