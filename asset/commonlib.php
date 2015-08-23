@@ -1,8 +1,8 @@
 <?php
 include_once("./asset/secret/config.php");
 function getConnection($dbname){
-    global $dbhost,$dbuser,$dbpass;
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass) or die('Error with MySQL connection');
+    global $dbhost,$dbuser,$dbpass,$dbport;
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, "micro_dorm", $dbport) or die('Error with MySQL connection');
     mysqli_query($conn,"SET NAMES 'utf8'");
     mysqli_select_db($conn,$dbname);
     return $conn;
