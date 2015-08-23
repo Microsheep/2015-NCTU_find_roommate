@@ -1,5 +1,5 @@
 <?php
-echo "Sending data... will auto redirect!";
+echo "Sending data... will auto redirect!\n";
 require_once("./asset/authenticate.php");
 include_once("./asset/commonlib.php");
 // Set variable
