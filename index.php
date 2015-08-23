@@ -5,6 +5,7 @@
     $sql = "SELECT count(id) FROM `dorm_data`";
     $result = mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
     $ary = mysqli_fetch_array($result);
+    killConnection($conn);
 ?>
 
 <div class="row">
