@@ -2,15 +2,14 @@
 echo "Sending data... will auto redirect!\n";
 require_once("./asset/authenticate.php");
 include_once("./asset/commonlib.php");
+// Get Connection
+$conn = getConnection("micro_dorm");
 // Set variable
-$post_ID = $_POST['post_ID'];
-if(empty($post_ID)){
-    header('Location: ./give_data.php?status=normal');
-}
-$post_name = $_POST['post_name'];
-$post_class = $_POST['post_class'];
-$post_dorm = $_POST['post_dorm'];
-$post_roomid = $_POST['post_roomid'];
+$post_ID = mysqli_real_escape_string($conn,$_POST['post_ID']);
+$post_name = mysqli_real_escape_string($conn,$_POST['post_name']);
+$post_class = mysqli_real_escape_string($conn,$_POST['post_class']);
+$post_dorm = mysqli_real_escape_string($conn,$_POST['post_dorm']);
+$post_roomid = mysqli_real_escape_string($conn,$_POST['post_roomid']);
 if(strpos($post_roomid,"a")!==false){
     $post_roomid = "A" . substr($post_roomid, 1);
 }
@@ -21,18 +20,20 @@ $post_floor = substr($post_roomid, 0, -2);
 if(strpos($post_floor,"A")!==false || strpos($post_floor,"B")!==false){
     $post_floor = substr($post_floor, 1);
 }
-$post_email = $_POST['post_email'];
-$post_fb = $_POST['post_fb'];
+if(empty($post_ID)||empty($post_name)||empty($post_class)||empty($post_dorm)||empty($post_roomid)||empty($post_floor)){
+    header('Location: ./give_data.php?status=normal');
+    killConnection($conn);
+}
+$post_email = mysqli_real_escape_string($conn,$_POST['post_email']);
+$post_fb = mysqli_real_escape_string($conn,$_POST['post_fb']);
 $post_fb = explode("?",$post_fb)[0];
 $pos = strpos($post_fb,":");
 if($pos!==false){
     $post_fb = substr($post_fb, ($pos+3));
 }
-$post_words = $_POST['post_words'];
-// Get Connection
-$conn = getConnection("micro_dorm");
+$post_words = mysqli_real_escape_string($conn,$_POST['post_words']);
 // Check if ID exist
-$sql = "SELECT count(id) FROM `dorm_data` WHERE id=". $_POST['post_ID'];
+$sql = "SELECT count(id) FROM `dorm_data` WHERE id=". $post_ID;
 $result = mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
 $ary = mysqli_fetch_array($result);
 //Insert item
