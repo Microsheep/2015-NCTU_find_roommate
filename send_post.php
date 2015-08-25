@@ -33,7 +33,7 @@ if($pos!==false){
 }
 $post_words = mysqli_real_escape_string($conn,$_POST['post_words']);
 // Check if ID exist
-$sql = "SELECT count(id) FROM `dorm_data` WHERE id=". $post_ID;
+$sql = "SELECT count(id) FROM `dorm_data` WHERE id=\"". $post_ID . "\"";
 $result = mysqli_query($conn, $sql) or die('MySQL query error '.mysqli_error().' '.$sql);
 $ary = mysqli_fetch_array($result);
 //Insert item
