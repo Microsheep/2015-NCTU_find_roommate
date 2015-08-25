@@ -1,27 +1,46 @@
 <?php
     include_once("./header.php");
+    $floor = (int)$_GET['floor'];
+    $roomid = (int)$_GET['roomid'];
+    global $floorplan;
     if($_GET['place']=="girlA"){
         $place = "竹軒 A棟";
         $now_place = "竹軒";
-        $get_roomid = "A" . (int)$_GET['roomid'];
+        if($floor<1||$floor>3){
+            die("<script>location.href = './index.php'</script>");
+        }
+        $get_roomid = "A" . $roomid;
     }
     else if($_GET['place']=="girlB"){
         $place = "竹軒 B棟";
         $now_place = "竹軒";
-        $get_roomid = "B" . (int)$_GET['roomid'];
+        if($floor<0||$floor>3){
+            die("<script>location.href = './index.php'</script>");
+        }
+        $get_roomid = "B" . $roomid;
     }
     else if($_GET['place']=="twelve"){
         $place = "十二舍";
         $now_place = "十二舍";
-        $get_roomid = (int)$_GET['roomid'];
+        if($floor<1||$floor>7){
+            die("<script>location.href = './index.php'</script>");
+        }
+        $get_roomid = $roomid;
     }
-    else{
+    else if($_GET['place']=="ten"){
         $place = "十舍";
         $now_place = "十舍";
-        $get_roomid = (int)$_GET['roomid'];
+        if($floor<1||$floor>5){
+            die("<script>location.href = './index.php'</script>");
+        }
+        $get_roomid = $roomid;
     }
-    $roomid = (int)$_GET['roomid'];
-    $floor = (int)$_GET['floor'];
+    else{
+        die("<script>location.href = './index.php'</script>");
+    }
+    if($floorplan[$place][$floor][0]>$roomid||$floorplan[$place][$floor][1]<$roomid){
+        die("<script>location.href = './index.php'</script>"); 
+    }
     if($floor==0){
         $now_floor = "地下一";
     }

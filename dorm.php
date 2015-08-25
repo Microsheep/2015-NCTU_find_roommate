@@ -1,18 +1,33 @@
 <?php
     include_once("./header.php");
+    $floor = (int)$_GET['floor'];
     if($_GET['place']=="girlA"){
         $place = "竹軒 A棟";
+        if($floor<1||$floor>3){
+            die("<script>location.href = './index.php'</script>");
+        }
     }
     else if($_GET['place']=="girlB"){
         $place = "竹軒 B棟";
+        if($floor<0||$floor>3){
+            die("<script>location.href = './index.php'</script>");
+        }
     }
     else if($_GET['place']=="twelve"){
         $place = "十二舍";
+        if($floor<1||$floor>7){
+            die("<script>location.href = './index.php'</script>");
+        }
+    }
+    else if($_GET['place']=="ten"){
+        $place = "十舍";
+        if($floor<1||$floor>5){
+            die("<script>location.href = './index.php'</script>");
+        }
     }
     else{
-        $place = "十舍";
+        die("<script>location.href = './index.php'</script>");
     }
-    $floor = (int)$_GET['floor'];
 ?>
 
 <div class="row">
