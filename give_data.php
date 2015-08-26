@@ -83,7 +83,6 @@ elseif($_GET['status']=="SameID"){
     <textarea class="form-control" rows="5" name="post_words"></textarea><br>
     <div class="row">
         <div class="col-md-12" style="text-align:center">
-            <h4>按下送出資料代表同意將上述資料在此網站中以公開方式呈現</h4>
             <input class="btn btn-primary" type="button" value="送出資料" onClick="check()">
         </div>
     </div>
@@ -140,8 +139,26 @@ elseif($_GET['status']=="SameID"){
         }
         // Decide send or not
         if(flag){
-            dorm.submit();
+            alerting();
         }
+    }
+    function alerting(){
+        swal({
+            title: "您確定要送出資料嗎 ?",
+            text: "送出資料代表同意將所填寫的資料在此網站中以公開方式呈現",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "是的，我同意!",
+            cancelButtonText: "不，我不同意!",
+            closeOnConfirm: false,
+            closeOnCancel: true},
+            function(isConfirm){
+                if (isConfirm) {
+                    dorm.submit();
+                }
+            }
+        );
     }
 </script>
 <script src=./asset/no_enter.js></script>

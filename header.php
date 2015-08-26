@@ -20,6 +20,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="./asset/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./asset/sweetalert.css">
 </head>
 <?php
     require_once("./asset/authenticate.php");
