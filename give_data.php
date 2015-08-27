@@ -91,7 +91,7 @@ elseif($_GET['status']=="SameID"){
 <script type="text/javascript">
     function check(){
         var flag=1;
-        if(document.getElementById("_ID").value.length==7) {
+        if(document.getElementById("_ID").value.length==7) { 
             document.getElementById("A_ID").style.display="none";
         }
         else{
@@ -145,10 +145,11 @@ elseif($_GET['status']=="SameID"){
     function alerting(){
         swal({
             title: "您確定要送出資料嗎 ?",
-            text: "送出資料代表同意將所填寫的資料在此網站中以公開方式呈現",
+            text: "送出資料代表同意我們的<a href=\"./privacy.php\">隱私條款</a><br>並願意將所填寫的資料在此網站中以公開方式呈現",
+            html: "true",
             type: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
+            confirmButtonColor: "#00DD00",
             confirmButtonText: "是的，我同意!",
             cancelButtonText: "不，我不同意!",
             closeOnConfirm: false,
