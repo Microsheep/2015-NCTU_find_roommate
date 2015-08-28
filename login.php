@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </nav>
 <div class="container">
-    <div class="alert alert-warning" role="alert">請先輸入密碼！密碼會在8/28公布在FB交大08版！若有任何問題可以與學聯會聯繫！</div> 
+    <div class="alert alert-warning" role="alert">請先輸入密碼！密碼已公布在FB交大08版！若有任何問題可以與學聯會聯繫！</div> 
     <div class=row>
         <div class="col-md-4">
             <form id="login" method="post">
