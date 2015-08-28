@@ -21,7 +21,7 @@
         <h4>系統使用方法</h4>
     </div>
     <div class="panel-body">
-        <h4>1. 到<a href="http://dormapply2.adm.nctu.edu.tw/freshman/">住宿服務組的網站</a>查出自己住在哪裡</h4>
+        <h4>1. 到<a href="http://dormapply2.adm.nctu.edu.tw/freshman_query/">住宿服務組的網站</a>查出自己住在哪裡</h4>
         <h4>2. 點選上方 <a href="./give_data.php?status=normal">"填資料"</a></h4>
         <h4>3. 依照表單內容填寫並送出 (有必填與非必填)</h4>
         <h4>4. 使用<a href ="./search.php">搜尋功能</a>或是上方各宿舍的列表找到自己的室友</h4>
