@@ -54,6 +54,7 @@ elseif($_GET['status']=="SameID"){
             <option>外國語文學系</option>
             <option>傳播與科技學系</option>
             <option>人文社會學系</option>
+            <option>理學院科學學士學位學程</option>
         </select><br>
         <div class="alert alert-danger" role="alert" id="A_class" style="display:none">
             請選擇科系！
